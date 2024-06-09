@@ -1,4 +1,4 @@
-import("dotenv/config");
+import { config } from "dotenv";
 
 import { Worker } from "worker_threads";
 
@@ -6,6 +6,8 @@ import express from "express";
 import cors from "cors";
 
 import path from 'path';
+
+config();
 
 const PORT = process.env.PORT ?? 3000;
 const PATH = process.env.DIST ?? path.join(process.cwd(), 'uploads');
